@@ -1,6 +1,44 @@
 <h1>Scouting 2018 </h1>
 
-<p>form:</p>
+<p># du match</p>
 <input name="matchnb" type="text" id="matchnb">
+<p># de l'équipe</p>
 <input name="teamnb" type="text" id="teamnb">
-<input name="" type="text" id="">
+
+<p>Manipulation des cubes. *0 = pas de cubes</p>
+<p><input type="range" min="0" max="5" value="2" class="slider" id="manipcube" onchange="document.getElementById('mcsval').innerHTML = this.value;" oninput="document.getElementById('mcsval').innerHTML = this.value;"> <b id='mcsval'>2</b></p>
+
+<p>Prend des cubes par terre</p>
+<input type="radio" name="cparterre" value="oui"> oui<br>
+<input type="radio" name="cparterre" value="non"> non<br>
+
+<p>Prend des cubes au portail</p>
+<input type="radio" name="cportail" value="oui"> oui<br>
+<input type="radio" name="cportail" value="non"> non<br>
+<input type="radio" name="cportail" value="seulement"> seulement au portail<br>
+
+<p>Met des cubes sur les switchs</p>
+<input type="radio" name="cswitchs" value="oui"> oui<br>
+<input type="radio" name="cswitchs" value="non"> non<br>
+<input type="radio" name="cswitchs" value="difficulte"> avec difficulté<br>
+
+<p>Met des cubes sur la scale</p>
+<input type="radio" name="cscale" value="oui"> oui<br>
+<input type="radio" name="cscale" value="non"> non<br>
+<input type="radio" name="cscale" value="difficulte"> avec difficulté<br>
+
+<p>Parking</p>
+<input type="radio" name="parking" value="oui"> oui<br>
+<input type="radio" name="parking" value="non"> non<br>
+<input type="radio" name="parking" value="difficulte"> avec difficulté<br>
+
+<p>Grimper</p>
+<input type="radio" name="grimper" value="oui"> oui<br>
+<input type="radio" name="grimper" value="non"> non<br>
+<input type="radio" name="grimper" value="difficulte"> avec difficulté<br>
+
+<p>Évaluation de la défense</p>
+<p><input type="range" min="0" max="5" value="2" class="slider" id="defense" onchange="document.getElementById('defval').innerHTML = this.value;" oninput="document.getElementById('defval').innerHTML = this.value;"> <b id='defval'>2</b></p>
+
+<p>Évaluation de la conduite</p>
+<p><input type="range" min="0" max="5" value="2" class="slider" id="conduite" onchange="document.getElementById('condval').innerHTML = this.value;" oninput="document.getElementById('condval').innerHTML = this.value;"> <b id='condval'>2</b></p>

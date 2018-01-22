@@ -60,3 +60,31 @@
 <p>Évaluation de la conduite</p>
 <p><input type="range" min="0" max="5" value="2" class="slider" id="conduite" onchange="document.getElementById('condval').innerHTML = this.value;" oninput="document.getElementById('condval').innerHTML = this.value;"> <b id='condval'>2</b></p>
 </form>
+
+<button onclick="saveForm()">Save</button>
+
+<p id="jsonout"></p>
+<script>
+var formitems = 0;
+function saveForm() {
+
+  formitems = document.getElementById("scoutform").elements.length;
+
+
+  var textjson = '[';
+  for (var i = 0; i < formitems; i++) {
+    if (document.getElementById("scoutform").elements[i].type.toLowerCase() == 'radio'){
+      textjson = textjson + document.getElementById("scoutform").elements[i].checked + ", ";
+    }else{
+    textjson = textjson + getTextNumber(i) + ", ";
+  }
+  }
+  textjson = textjson.slice(0,-2) + ']'
+  document.getElementById("jsonout").innerHTML = textjson;
+
+}
+
+function getTextNumber(n){
+  return '"' + document.getElementById("scoutform").elements[n].value + '"';
+}
+</script>

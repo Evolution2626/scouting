@@ -59,6 +59,10 @@
 
 <p>Évaluation de la conduite</p>
 <p><input type="range" min="0" max="5" value="2" class="slider" id="conduite" onchange="document.getElementById('condval').innerHTML = this.value;" oninput="document.getElementById('condval').innerHTML = this.value;"> <b id='condval'>2</b></p>
+
+<p>Commentaires</p>
+<input name="comments" type="text" id="comments">
+
 </form>
 
 <button onclick="saveForm()">Save</button>

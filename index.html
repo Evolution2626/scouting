@@ -95,8 +95,10 @@ function saveForm() {
   textjson = textjson.slice(0,-2) + '],';
   document.getElementById("jsonout").innerHTML = textjson;
 
-    localStorage.dev = localStorage.dev + textjson;
-
+  if(typeof localStorage.dev !== 'undefined'){}else {
+    localStorage.dev = '';
+  }
+localStorage.dev = localStorage.dev + textjson;
 document.getElementById("devjson").innerHTML = localStorage.dev;
 
 

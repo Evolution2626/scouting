@@ -68,8 +68,17 @@
 <button onclick="saveForm()">Save</button>
 
 <p id="jsonout"></p>
+
+<h2>Developers</h2>
+<button onclick="clearLocalData()">Clear data</button>
+<p id="devjson"></p>
+
+
 <script>
 var formitems = 0;
+
+document.getElementById("devjson").innerHTML = localStorage.dev;
+
 function saveForm() {
 
   formitems = document.getElementById("scoutform").elements.length;
@@ -83,12 +92,24 @@ function saveForm() {
     textjson = textjson + getTextNumber(i) + ", ";
   }
   }
-  textjson = textjson.slice(0,-2) + ']'
+  textjson = textjson.slice(0,-2) + '],';
   document.getElementById("jsonout").innerHTML = textjson;
+
+  if(typeof localStorage.dev !== 'undefined'){
+    localStorage.dev = localStorage.dev + textjson;
+}
+document.getElementById("devjson").innerHTML = localStorage.dev;
+
 
 }
 
 function getTextNumber(n){
   return '"' + document.getElementById("scoutform").elements[n].value + '"';
+}
+
+function clearLocalData(){
+
+localStorage.dev = '';
+document.getElementById("devjson").innerHTML = localStorage.dev;
 }
 </script>

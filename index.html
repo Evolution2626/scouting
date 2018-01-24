@@ -100,7 +100,7 @@ function saveForm() {
     localStorage.dev = '';
   }
 localStorage.dev = localStorage.dev + textjson;
-document.getElementById("devjson").innerHTML = localStorage.dev;
+printDevData();
 
 
 }
@@ -112,6 +112,11 @@ function getTextNumber(n){
 function clearLocalData(){
 
 localStorage.dev = '';
-document.getElementById("devjson").innerHTML = localStorage.dev;
+printDevData();
+}
+
+function printDevData(){
+  var localS = localStorage.dev;
+document.getElementById("devjson").innerHTML = '[' + localS.slice(0,-1) + ']';
 }
 </script>

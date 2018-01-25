@@ -99,7 +99,7 @@ function saveForm() {
 
   var textjson = '[';
   for (var i = 0; i < formitems; i++) {
-    if (document.getElementById("scoutform").elements[i].type.toLowerCase() == 'radio'){
+    if ((document.getElementById("scoutform").elements[i].type.toLowerCase() == 'radio') || document.getElementById("scoutform").elements[i].type.toLowerCase() == 'checkbox'){
       textjson = textjson + document.getElementById("scoutform").elements[i].checked + ", ";
     }else{
     textjson = textjson + getTextNumber(i) + ", ";

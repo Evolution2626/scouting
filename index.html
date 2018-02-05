@@ -90,6 +90,8 @@ var QRCode;!function(){function a(a){this.mode=c.MODE_8BIT_BYTE,this.data=a,this
 
 <p id="jsonout"></p>
 
+<div id="qrcode"></div>
+
 <h2>Developers</h2>
 
 <p id="devjson"></p>
@@ -117,6 +119,8 @@ function saveForm() {
   textjson = textjson.slice(0,-2) + '],';
   document.getElementById("jsonout").innerHTML = textjson;
 
+createQRcode(textjson);
+
   if(typeof localStorage.dev !== 'undefined'){}else {
     localStorage.dev = '';
   }
@@ -139,5 +143,11 @@ printDevData();
 function printDevData(){
   var localS = localStorage.dev;
 document.getElementById("devjson").innerHTML = '[' + localS.slice(0,-1) + ']';
+}
+
+function createQRcode(qrdata){
+document.getElementById("qrcode").innerHTML = '';
+new QRCode(document.getElementById("qrcode"), "" + qrdata);
+
 }
 </script>
